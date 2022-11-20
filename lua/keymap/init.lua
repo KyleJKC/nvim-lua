@@ -3,6 +3,7 @@
 -- License: MIT
 -- recommend plugins key defines in this file
 
+local api = vim.api
 require('keymap.config')
 local key = require('core.keymap')
 local nmap = key.nmap
@@ -26,4 +27,13 @@ nmap({
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fr', cmd('Telescope oldfiles'), opts(noremap, silent)},
+  {
+    '<Leader>fe',
+    function()
+      vim.cmd('Telescope file_browser')
+      local esc_key = api.nvim_replace_termcodes('<Esc>', true, false, true)
+      api.nvim_feedkeys(esc_key, 'n', false)
+    end,
+  },
 })

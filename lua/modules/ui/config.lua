@@ -16,7 +16,7 @@ function config.dashboard()
   local home = os.getenv('HOME')
   local db = require('dashboard')
   db.session_directory = home .. '/.cache/nvim/session'
-  db.preview_command = 'cat | lolcat -F 0.3'
+  db.preview_command = 'cat'
   db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
   db.preview_file_height = 12
   db.preview_file_width = 80
@@ -28,10 +28,22 @@ function config.dashboard()
       action = 'PackerUpdate',
     },
     {
+      icon = '  ',
+      desc = 'Recent Files                            ',
+      action = 'Telescope oldfiles',
+      shortcut = 'SPC f h',
+    },
+    {
       icon = '  ',
-      desc = 'Find File                              ',
+      desc = 'Find File                               ',
       action = 'Telescope find_files find_command=rg,--hidden,--files',
       shortcut = 'SPC f f',
+    },
+    {
+      icon = '  ',
+      desc = 'File Browser                            ',
+      action = 'Telescope file_browser',
+      shortcut = 'SPC f e',
     },
   }
 end
