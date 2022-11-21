@@ -13,6 +13,8 @@ plugin({
   config = conf.nvim_lsp,
 })
 
+plugin({ 'glepnir/lspsaga.nvim', branch = 'main', after = 'nvim-lspconfig', config = conf.lspsaga })
+
 plugin({
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
@@ -26,3 +28,7 @@ plugin({
 })
 
 plugin({ 'L3MON4D3/LuaSnip', event = 'InsertCharPre', config = conf.lua_snip })
+
+plugin({ 'onsails/lspkind.nvim', event = 'InsertEnter'})
+
+plugin({ 'windwp/nvim-autopairs', event = 'InsertEnter', config = conf.auto_pairs })

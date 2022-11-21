@@ -23,6 +23,16 @@ nmap({
   { '<Leader>sl', cmd('SessionLoad'), opts(noremap, silent) },
   -- nvimtree
   { '<Leader>e', cmd('NvimTreeToggle'), opts(noremap, silent) },
+    -- Lspsaga
+  { '[e', cmd('Lspsaga diagnostic_jump_next'), opts(noremap, silent) },
+  { ']e', cmd('Lspsaga diagnostic_jump_prev'), opts(noremap, silent) },
+  { '[c', cmd('Lspsaga show_cursor_diagnostics'), opts(noremap, silent) },
+  { 'K', cmd('Lspsaga hover_doc'), opts(noremap, silent) },
+  { 'ga', cmd('Lspsaga code_action'), opts(noremap, silent) },
+  { 'gd', cmd('Lspsaga peek_definition'), opts(noremap, silent) },
+  { 'gr', cmd('Lspsaga rename'), opts(noremap, silent) },
+  { 'gh', cmd('Lspsaga lsp_finder'), opts(noremap, silent) },
+  { '<Leader>g', cmd('Lspsaga open_floaterm lazygit'), opts(noremap, silent) },
   -- Telescope
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
