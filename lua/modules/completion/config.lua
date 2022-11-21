@@ -46,8 +46,8 @@ end
 function config.nvim_cmp()
   local cmp = require('cmp')
   local lspkind = require('lspkind')
+  vim.opt.completeopt = {'menu', 'menuone'}
   cmp.setup({
-    preselect = cmp.PreselectMode.Item,
     window = {
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered(),
